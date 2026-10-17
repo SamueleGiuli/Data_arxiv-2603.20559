@@ -65,7 +65,7 @@ ax_d.scatter(
     s=30,
     edgecolor="black",
     linewidth=0.6,
-    label="Ref. [145]",
+    label="Ref. [152]",
     zorder=3
 )
 
@@ -76,7 +76,7 @@ ax_d.scatter(
     s=30,
     edgecolor="black",
     linewidth=0.6,
-    label="Ref. [142]",
+    label="Ref. [149]",
     zorder=3
 )
 

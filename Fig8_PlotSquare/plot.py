@@ -29,8 +29,8 @@ plt.ylabel("$T/D$")
 
 plt.colorbar(label=r"$ m_z $")
 
-plt.plot(U_kunes,T_kunes,linestyle='--',color='magenta',marker='o',markersize=4, markerfacecolor='none',label='Ref. [107]')
-plt.plot(U_schafer,T_schafer,linestyle=':',color='white',marker='s',markersize=4, markerfacecolor='none',label='Ref. [108]')
+plt.plot(U_kunes,T_kunes,linestyle='--',color='magenta',marker='o',markersize=4, markerfacecolor='none',label='Ref. [114]')
+plt.plot(U_schafer,T_schafer,linestyle=':',color='white',marker='s',markersize=4, markerfacecolor='none',label='Ref. [115]')
 plt.legend(framealpha=0.65)
 plt.tight_layout()
 plt.savefig('Figure8.png',bbox_inches="tight")
