@@ -45,6 +45,15 @@ with h5py.File(f"{data_dir}/dmft.h5", "r") as f:
         Dm[U] = group["docc"][:]
         Em[U] = group["energy"][:]
 
+# DMFT-NRG entropy
+Tn, Sn = {}, {}
+
+with h5py.File(f"{data_dir}/DMFTNRG_S.h5", "r") as f:
+    for U in Uplot:
+        group = f[f"U{U:.2f}"]
+        Tn[U] = np.array([float(k[1:]) for k in group])
+        Sn[U] = np.array([group[k]["entropy"][()] for k in group])
+
 
 # ============================================================
 # Plotting styles
@@ -286,6 +295,19 @@ entropy_values = []
 
 for U in Uplot:
     j = uix[round(U, 3)]
+
+    # DMFT-NRG (background)
+    axins.plot(
+        Tn[U],
+        Sn[U] / np.log(2),
+        color=color[U],
+        mec="black",
+        ls="None",
+        marker="^",
+        ms=7,
+        mew=0.7,
+        zorder=0,
+    )
 
     entropy = S[3][:, j] / np.log(2)
     valid = np.isfinite(entropy)
